@@ -1,5 +1,6 @@
 package edu.masanz.da.ta.dao;
 
+import edu.masanz.da.ta.conf.Ini;
 import edu.masanz.da.ta.dto.*;
 import edu.masanz.da.ta.utils.Security;
 
@@ -34,6 +35,20 @@ public class Dao {
 
     private static void iniMapaUsuarios() {
         // TODO 01 iniMapaUsuarios
+        HashMap<String, ArrayList<String>> usuarios = new HashMap<>();
+
+        String[] splitted;
+        for (String usuario : USUARIOS){
+            ArrayList<String> datos = new ArrayList<>();
+            splitted = usuario.split(SPLITTER);
+            datos.add(splitted[1]);
+            datos.add(splitted[2]);
+            datos.add(splitted[3]);
+            usuarios.put(splitted[0],datos);
+        }
+        for (Map.Entry<String, ArrayList<String>> entrada : usuarios.entrySet()) {
+            System.out.println(entrada.getKey() + entrada.getValue());
+        }
     }
 
     private static void iniMapaItems() {
