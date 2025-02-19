@@ -1,0 +1,217 @@
+*************************************************************************************
+*                             A U T E N T I C A C I Ó N                             *
+*************************************************************************************
+Para salir deje algún campo vacío
+
+Usuario   : Otro
+Contraseña: 1234
+Autenticación incorrecta
+
+*************************************************************************************
+*                             A U T E N T I C A C I Ó N                             *
+*************************************************************************************
+Para salir deje algún campo vacío
+
+Usuario   : Admin
+Contraseña: 1590
+Autenticación correcta
+
+*************************************************************************************
+*                           ADMINISTRACIÓN DE LAS SUBASTAS                          *
+*************************************************************************************
+
+1. Validar artículos
+2. Listar pujas de los artículos
+3. Resetear sistema
+4. Histórico ganadores
+5. Gestionar usuarios
+0. Exit
+Opción [0,5]: 5
+
+*************************************************************************************
+*                                Gestión de usuarios                                *
+*************************************************************************************
+
+1. Mostrar usuarios y roles
+2. Crear usuario
+3. Modificar password
+4. Modificar rol
+5. Eliminar usuario
+0. Exit
+Opción [0,5]: 1
+
+|--------|------|
+|Usuario |Rol   |
+|--------|------|
+|Admin   |ADMIN |
+|Aitor   |USER  |
+|Alba    |USER  |
+|Amaia   |USER  |
+|Ane     |USER  |
+|Iker    |USER  |
+|Javi    |USER  |
+|Jon     |USER  |
+|Mikel   |USER  |
+|Silvia  |USER  |
+|--------|------|
+
+1. Mostrar usuarios y roles
+2. Crear usuario
+3. Modificar password
+4. Modificar rol
+5. Eliminar usuario
+0. Exit
+Opción [0,5]: 2
+
+                Nombre: Otro
+            Contraseña: 1234
+Es administrador [s/N]: s
+Usuario creado
+
+1. Mostrar usuarios y roles
+2. Crear usuario
+3. Modificar password
+4. Modificar rol
+5. Eliminar usuario
+0. Exit
+Opción [0,5]: 0
+
+*************************************************************************************
+*                           ADMINISTRACIÓN DE LAS SUBASTAS                          *
+*************************************************************************************
+
+1. Validar artículos
+2. Listar pujas de los artículos
+3. Resetear sistema
+4. Histórico ganadores
+5. Gestionar usuarios
+0. Exit
+Opción [0,5]: 0
+
+*************************************************************************************
+*                             A U T E N T I C A C I Ó N                             *
+*************************************************************************************
+Para salir deje algún campo vacío
+
+Usuario   : Otro
+Contraseña: 1234
+Autenticación correcta
+
+*************************************************************************************
+*                           ADMINISTRACIÓN DE LAS SUBASTAS                          *
+*************************************************************************************
+
+1. Validar artículos
+2. Listar pujas de los artículos
+3. Resetear sistema
+4. Histórico ganadores
+5. Gestionar usuarios
+0. Exit
+Opción [0,5]: 5
+
+*************************************************************************************
+*                                Gestión de usuarios                                *
+*************************************************************************************
+
+1. Mostrar usuarios y roles
+2. Crear usuario
+3. Modificar password
+4. Modificar rol
+5. Eliminar usuario
+0. Exit
+Opción [0,5]: 3
+
+        Nombre usuario: Aitor
+      Nueva contraseña: 1234
+Se ha cambiado la password
+
+1. Mostrar usuarios y roles
+2. Crear usuario
+3. Modificar password
+4. Modificar rol
+5. Eliminar usuario
+0. Exit
+Opción [0,5]: 4
+
+        Nombre usuario: Otro
+Es administrador [s/N]: n
+Se ha cambiado el rol
+
+1. Mostrar usuarios y roles
+2. Crear usuario
+3. Modificar password
+4. Modificar rol
+5. Eliminar usuario
+0. Exit
+Opción [0,5]: 1
+
+|--------|------|
+|Usuario |Rol   |
+|--------|------|
+|Admin   |ADMIN |
+|Aitor   |USER  |
+|Alba    |USER  |
+|Amaia   |USER  |
+|Ane     |USER  |
+|Iker    |USER  |
+|Javi    |USER  |
+|Jon     |USER  |
+|Mikel   |USER  |
+|Otro    |USER  |
+|Silvia  |USER  |
+|--------|------|
+
+1. Mostrar usuarios y roles
+2. Crear usuario
+3. Modificar password
+4. Modificar rol
+5. Eliminar usuario
+0. Exit
+Opción [0,5]: 5
+
+                Nombre: Iker
+        Eliminar [s/N]: s
+Se ha eliminado el usuario
+
+1. Mostrar usuarios y roles
+2. Crear usuario
+3. Modificar password
+4. Modificar rol
+5. Eliminar usuario
+0. Exit
+Opción [0,5]: 1
+
+|--------|------|
+|Usuario |Rol   |
+|--------|------|
+|Admin   |ADMIN |
+|Aitor   |USER  |
+|Alba    |USER  |
+|Amaia   |USER  |
+|Ane     |USER  |
+|Javi    |USER  |
+|Jon     |USER  |
+|Mikel   |USER  |
+|Otro    |USER  |
+|Silvia  |USER  |
+|--------|------|
+
+1. Mostrar usuarios y roles
+2. Crear usuario
+3. Modificar password
+4. Modificar rol
+5. Eliminar usuario
+0. Exit
+Opción [0,5]: 0
+
+*************************************************************************************
+*                           ADMINISTRACIÓN DE LAS SUBASTAS                          *
+*************************************************************************************
+
+1. Validar artículos
+2. Listar pujas de los artículos
+3. Resetear sistema
+4. Histórico ganadores
+5. Gestionar usuarios
+0. Exit
+Opción [0,5]: 0

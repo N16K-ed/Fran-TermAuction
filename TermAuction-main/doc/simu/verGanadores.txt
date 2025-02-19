@@ -1,0 +1,72 @@
+*************************************************************************************
+*                             A U T E N T I C A C I Ó N                             *
+*************************************************************************************
+Para salir deje algún campo vacío
+
+Usuario   : Admin
+Contraseña: 1590
+Autenticación correcta
+
+*************************************************************************************
+*                           ADMINISTRACIÓN DE LAS SUBASTAS                          *
+*************************************************************************************
+
+1. Validar artículos
+2. Listar pujas de los artículos
+3. Resetear sistema
+4. Histórico ganadores
+5. Gestionar usuarios
+0. Exit
+Opción [0,5]: 4
+
+|------|---------------------------|--------|--------|--------|--------|------------|
+| N.id | Nombre del artículo       | P.ini. | Propi. | P.com. | Compr. | Fecha puja |
+|------|---------------------------|--------|--------|--------|--------|------------|
+| No hay historico de ganadores                                                     |
+|------|---------------------------|--------|--------|--------|--------|------------|
+
+1. Validar artículos
+2. Listar pujas de los artículos
+3. Resetear sistema
+4. Histórico ganadores
+5. Gestionar usuarios
+0. Exit
+Opción [0,5]: 3
+
+Subasta reseteada
+
+1. Validar artículos
+2. Listar pujas de los artículos
+3. Resetear sistema
+4. Histórico ganadores
+5. Gestionar usuarios
+0. Exit
+Opción [0,5]: 4
+
+|------|---------------------------|--------|--------|--------|--------|------------|
+| N.id | Nombre del artículo       | P.ini. | Propi. | P.com. | Compr. | Fecha puja |
+|------|---------------------------|--------|--------|--------|--------|------------|
+|    3 | Figura de "Skeletor"      |   35 € | Alba   |   43 € | Aitor  | 2025-02-10 |
+|    4 | Figura de "Chichi"        |   25 € | Javi   |   35 € | Mikel  | 2025-01-01 |
+|    5 | Figura de "La Cosa"       |   20 € | Aitor  |   25 € | Silvia | 2024-12-31 |
+|------|---------------------------|--------|--------|--------|--------|------------|
+
+1. Validar artículos
+2. Listar pujas de los artículos
+3. Resetear sistema
+4. Histórico ganadores
+5. Gestionar usuarios
+0. Exit
+Opción [0,5]: 0
+
+*************************************************************************************
+*                             A U T E N T I C A C I Ó N                             *
+*************************************************************************************
+Para salir deje algún campo vacío
+
+Usuario   : 
+Contraseña: 
+
+*************************************************************************************
+*                             GRACIAS Y HASTA LA PRÓXIMA                            *
+*************************************************************************************
