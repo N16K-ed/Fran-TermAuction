@@ -36,7 +36,6 @@ public class Dao {
     private static void iniMapaUsuarios() {
         // TODO 01 iniMapaUsuarios
         HashMap<String, ArrayList<String>> usuarios = new HashMap<>();
-
         String[] splitted;
         for (String usuario : USUARIOS){
             ArrayList<String> datos = new ArrayList<>();
@@ -46,17 +45,56 @@ public class Dao {
             datos.add(splitted[3]);
             usuarios.put(splitted[0],datos);
         }
+        /* Recorrer el hashMap para comprobar:
+
         for (Map.Entry<String, ArrayList<String>> entrada : usuarios.entrySet()) {
             System.out.println(entrada.getKey() + entrada.getValue());
-        }
+        }*/
     }
 
     private static void iniMapaItems() {
         // TODO 02 iniMapaItems
+        HashMap<String, ArrayList<String>> items = new HashMap<>();
+        String[] splitted;
+        for (String item : ITEMS){
+            ArrayList<String> datos = new ArrayList<>();
+            splitted = item.split(SPLITTER);
+            datos.add(splitted[1]);
+            datos.add(splitted[2]);
+            datos.add(splitted[3]);
+            datos.add(splitted[4]);
+            datos.add(splitted[5]);
+            datos.add(splitted[6]);
+            datos.add(splitted[7]);
+            items.put(splitted[0],datos);
+        }
+        /* Recorrer el hashMap para comprobar:
+
+        for (Map.Entry<String, ArrayList<String>> entrada : items.entrySet()) {
+            System.out.println(entrada.getKey() + entrada.getValue());
+        }*/
     }
 
     private static void iniMapaPujas() {
         // TODO 03 iniMapaPujas
+        HashMap<Integer, ArrayList<String>> pujas = new HashMap<>();
+        String[] splitted;
+        int contador = 1;
+        for (String puja : PUJAS){
+            ArrayList<String> datos = new ArrayList<>();
+            splitted = puja.split(SPLITTER);
+            datos.add(splitted[0]);
+            datos.add(splitted[1]);
+            datos.add(splitted[2]);
+            datos.add(splitted[3]);
+            pujas.put(contador,datos);
+            contador++;
+        }
+        /* Recorrer el hashMap para comprobar:
+
+        for (Map.Entry<Integer, ArrayList<String>> entrada : pujas.entrySet()) {
+            System.out.println(entrada.getKey().toString() + entrada.getValue());
+        }*/
     }
     //endregion
 
