@@ -35,38 +35,38 @@ public class Dao {
 
     private static void iniMapaUsuarios() {
         // TODO 01 iniMapaUsuarios
-        HashMap<String, ArrayList<String>> usuarios = new HashMap<>();
+        HashMap<String, Usuario> usuarios = new HashMap<>();
         String[] splitted;
+        int contador = 1;
         for (String usuario : USUARIOS){
-            ArrayList<String> datos = new ArrayList<>();
             splitted = usuario.split(SPLITTER);
-            datos.add(splitted[1]);
-            datos.add(splitted[2]);
-            datos.add(splitted[3]);
-            usuarios.put(splitted[0],datos);
+            Usuario usuario1 = new Usuario(splitted[0], splitted[1],
+                                           splitted[2], splitted[3]);
+            usuarios.put(Integer.toString(contador), usuario1);
+            contador++;
         }
-        /* Recorrer el hashMap para comprobar:
+        mapaUsuarios = usuarios;
 
-        for (Map.Entry<String, ArrayList<String>> entrada : usuarios.entrySet()) {
-            System.out.println(entrada.getKey() + entrada.getValue());
+        /*Recorrer el hashMap para comprobar:
+
+        for (Map.Entry<String, Usuario> entrada : usuarios.entrySet()) {
+            System.out.println(entrada.getKey() + " " + entrada.getValue().getNombre() + " ," + entrada.getValue().getSal() + " ," + entrada.getValue().getHashPwSal() + " ," + entrada.getValue().getRol());
         }*/
     }
 
     private static void iniMapaItems() {
         // TODO 02 iniMapaItems
-        HashMap<String, ArrayList<String>> items = new HashMap<>();
+        HashMap<String, Item> items = new HashMap<>();
         String[] splitted;
+        int contador = 1;
         for (String item : ITEMS){
-            ArrayList<String> datos = new ArrayList<>();
+
             splitted = item.split(SPLITTER);
-            datos.add(splitted[1]);
-            datos.add(splitted[2]);
-            datos.add(splitted[3]);
-            datos.add(splitted[4]);
-            datos.add(splitted[5]);
-            datos.add(splitted[6]);
-            datos.add(splitted[7]);
-            items.put(splitted[0],datos);
+            long id = Long.parseLong(splitted[0]);
+            Item item1 = new Item(id,splitted[1],splitted[2],splitted[3],splitted[4],splitted[5],splitted[6],splitted[7]);
+
+
+            items.put(Integer.toString(contador), item1);
         }
         /* Recorrer el hashMap para comprobar:
 
