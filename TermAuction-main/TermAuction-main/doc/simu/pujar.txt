@@ -1,0 +1,159 @@
+*************************************************************************************
+*                             A U T E N T I C A C I Ó N                             *
+*************************************************************************************
+Para salir deje algún campo vacío
+
+Usuario   : Aitor
+Contraseña: 7654
+Autenticación correcta
+
+*************************************************************************************
+*                                  SUBASTA A CIEGAS                                 *
+*************************************************************************************
+
+1. Ver artículos y pujar
+2. Listar pujas realizadas
+3. Ofertar un artículo
+0. Exit
+Opción [0,3]: 1
+
+*************************************************************************************
+*                               Ver y pujar artículos                               *
+*************************************************************************************
+
+1. Mostrar artículos
+2. Pujar por un artículo
+0. Exit
+Opción [0,2]: 1
+
+|--------------------------------------------|
+| N.id | Nombre del artículo        | P.ini. |
+| Descripción artículo.  Enlace a la imagen. |
+|--------------------------------------------|
+|    3 | Figura de "Skeletor"       |   35 € |
+| Incluye accesorios dentro del envoltorio o |
+| riginal. 14 cm altura. Mattel. Hecho en Ch |
+| ina 2021.                                  |
+| https://i.postimg.cc/YCQYm2x9/skeletor.png |
+|--------------------------------------------|
+|    4 | Figura de "Chichi"         |   25 € |
+| Figura anime esposa de Goku. Caja de 15 cm |
+|  x 10 cm x 20 cm. Peso 0.3 kg. Plástico PV |
+| C.                                         |
+| https://i.postimg.cc/qvZVy0BP/chichi.png   |
+|--------------------------------------------|
+|    5 | Figura de "La Cosa"        |   20 € |
+| Tamaño aprox: 18 cm altura x 16 cm anchura |
+|  x 4 cm profundidad. Buen estado. Sin caja |
+| . Año 1994.                                |
+| https://i.postimg.cc/ZK7DDHk3/cosa.png     |
+|--------------------------------------------|
+|    6 | Muñeco de Duke             |   20 € |
+| Mascota de Java de 15 cm de alto hecha a p |
+| unto rellena de algodón.                   |
+| https://i.postimg.cc/3RcGmk4s/duke.png     |
+|--------------------------------------------|
+
+1. Mostrar artículos
+2. Pujar por un artículo
+0. Exit
+Opción [0,2]: 2
+
+        Nombre usuario: Aitor
+            Contraseña: 7654
+       Número artículo: 3
+    Precio que se puja: 36
+Confirma la puja [s/N]: s
+Puja realizada
+
+1. Mostrar artículos
+2. Pujar por un artículo
+0. Exit
+Opción [0,2]: 0
+
+*************************************************************************************
+*                                  SUBASTA A CIEGAS                                 *
+*************************************************************************************
+
+1. Ver artículos y pujar
+2. Listar pujas realizadas
+3. Ofertar un artículo
+0. Exit
+Opción [0,3]: 2
+
+|------------------------------------------------------------------------------|
+| N.id | Nombre del artículo       | P.ini. | P.com. | Instante de tiempo      |
+|------------------------------------------------------------------------------|
+|    3 | Figura de "Skeletor"      |   35 € |   36 € | 2025-02-10 23:02:49.621 |
+| https://i.postimg.cc/YCQYm2x9/skeletor.png                                   |
+|------------------------------------------------------------------------------|
+|    4 | Figura de "Chichi"        |   25 € |   27 € | 2025-01-02 11:32:08.786 |
+| https://i.postimg.cc/qvZVy0BP/chichi.png                                     |
+|------------------------------------------------------------------------------|
+
+1. Ver artículos y pujar
+2. Listar pujas realizadas
+3. Ofertar un artículo
+0. Exit
+Opción [0,3]: 1
+
+*************************************************************************************
+*                               Ver y pujar artículos                               *
+*************************************************************************************
+
+1. Mostrar artículos
+2. Pujar por un artículo
+0. Exit
+Opción [0,2]: 2
+
+        Nombre usuario: Aitor
+            Contraseña: 7654
+       Número artículo: 3
+    Precio que se puja: 34
+El precio debe ser mayor o igual al de salida
+
+1. Mostrar artículos
+2. Pujar por un artículo
+0. Exit
+Opción [0,2]: 2
+
+        Nombre usuario: Aitor
+            Contraseña: 7654
+       Número artículo: 3
+    Precio que se puja: 43
+Confirma la puja [s/N]: s
+Puja realizada
+
+1. Mostrar artículos
+2. Pujar por un artículo
+0. Exit
+Opción [0,2]: 0
+
+*************************************************************************************
+*                                  SUBASTA A CIEGAS                                 *
+*************************************************************************************
+
+1. Ver artículos y pujar
+2. Listar pujas realizadas
+3. Ofertar un artículo
+0. Exit
+Opción [0,3]: 2
+
+|------------------------------------------------------------------------------|
+| N.id | Nombre del artículo       | P.ini. | P.com. | Instante de tiempo      |
+|------------------------------------------------------------------------------|
+|    3 | Figura de "Skeletor"      |   35 € |   36 € | 2025-02-10 23:02:49.621 |
+| https://i.postimg.cc/YCQYm2x9/skeletor.png                                   |
+|------------------------------------------------------------------------------|
+|    3 | Figura de "Skeletor"      |   35 € |   43 € | 2025-02-10 23:04:42.165 |
+| https://i.postimg.cc/YCQYm2x9/skeletor.png                                   |
+|------------------------------------------------------------------------------|
+|    4 | Figura de "Chichi"        |   25 € |   27 € | 2025-01-02 11:32:08.786 |
+| https://i.postimg.cc/qvZVy0BP/chichi.png                                     |
+|------------------------------------------------------------------------------|
+
+1. Ver artículos y pujar
+2. Listar pujas realizadas
+3. Ofertar un artículo
+0. Exit
+Opción [0,3]:

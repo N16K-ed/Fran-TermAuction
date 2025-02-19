@@ -1,0 +1,167 @@
+*************************************************************************************
+*                             A U T E N T I C A C I Ó N                             *
+*************************************************************************************
+Para salir deje algún campo vacío
+
+Usuario   : Admin
+Contraseña: 1590
+Autenticación correcta
+
+*************************************************************************************
+*                           ADMINISTRACIÓN DE LAS SUBASTAS                          *
+*************************************************************************************
+
+1. Validar artículos
+2. Listar pujas de los artículos
+3. Resetear sistema
+4. Histórico ganadores
+5. Gestionar usuarios
+0. Exit
+Opción [0,5]: 1
+
+*************************************************************************************
+*                              Validación de artículos                              *
+*************************************************************************************
+
+1. Mostrar artículos pendientes
+2. Validar un artículo
+3. Validar todos los artículos
+4. Invalidar un artículo
+0. Exit
+Opción [0,4]: 1
+
+|--------------------------------------------|
+| N.id | Nombre del artículo        | P.ini. |
+| Descripción artículo.  Enlace a la imagen. |
+|--------------------------------------------|
+|    2 | Figura de "Red Sonja"      |   30 € |
+| Figura Funko Pop de Red Sonja sangrando #1 |
+| 58. Para mayores de 14 años. Sin abrir.    |
+| https://i.postimg.cc/2yj20b22/redsonja.png |
+|--------------------------------------------|
+|    6 | Muñeco de Duke             |   20 € |
+| Mascota de Java de 15 cm de alto hecha a p |
+| unto rellena de algodón.                   |
+| https://i.postimg.cc/3RcGmk4s/duke.png     |
+|--------------------------------------------|
+
+1. Mostrar artículos pendientes
+2. Validar un artículo
+3. Validar todos los artículos
+4. Invalidar un artículo
+0. Exit
+Opción [0,4]: 2
+
+Id del artículo: 6
+
+Artículo validado
+
+
+1. Mostrar artículos pendientes
+2. Validar un artículo
+3. Validar todos los artículos
+4. Invalidar un artículo
+0. Exit
+Opción [0,4]: 1
+
+|--------------------------------------------|
+| N.id | Nombre del artículo        | P.ini. |
+| Descripción artículo.  Enlace a la imagen. |
+|--------------------------------------------|
+|    2 | Figura de "Red Sonja"      |   30 € |
+| Figura Funko Pop de Red Sonja sangrando #1 |
+| 58. Para mayores de 14 años. Sin abrir.    |
+| https://i.postimg.cc/2yj20b22/redsonja.png |
+|--------------------------------------------|
+
+1. Mostrar artículos pendientes
+2. Validar un artículo
+3. Validar todos los artículos
+4. Invalidar un artículo
+0. Exit
+Opción [0,4]: 4
+
+Id del artículo: 2
+
+Artículo invalidado
+
+
+1. Mostrar artículos pendientes
+2. Validar un artículo
+3. Validar todos los artículos
+4. Invalidar un artículo
+0. Exit
+Opción [0,4]: 0
+
+*************************************************************************************
+*                           ADMINISTRACIÓN DE LAS SUBASTAS                          *
+*************************************************************************************
+
+1. Validar artículos
+2. Listar pujas de los artículos
+3. Resetear sistema
+4. Histórico ganadores
+5. Gestionar usuarios
+0. Exit
+Opción [0,5]: 0
+
+*************************************************************************************
+*                             A U T E N T I C A C I Ó N                             *
+*************************************************************************************
+Para salir deje algún campo vacío
+
+Usuario   : Aitor
+Contraseña: 7654
+Autenticación correcta
+
+*************************************************************************************
+*                                  SUBASTA A CIEGAS                                 *
+*************************************************************************************
+
+1. Ver artículos y pujar
+2. Listar pujas realizadas
+3. Ofertar un artículo
+0. Exit
+Opción [0,3]: 1
+
+*************************************************************************************
+*                               Ver y pujar artículos                               *
+*************************************************************************************
+
+1. Mostrar artículos
+2. Pujar por un artículo
+0. Exit
+Opción [0,2]: 1
+
+|--------------------------------------------|
+| N.id | Nombre del artículo        | P.ini. |
+| Descripción artículo.  Enlace a la imagen. |
+|--------------------------------------------|
+|    3 | Figura de "Skeletor"       |   35 € |
+| Incluye accesorios dentro del envoltorio o |
+| riginal. 14 cm altura. Mattel. Hecho en Ch |
+| ina 2021.                                  |
+| https://i.postimg.cc/YCQYm2x9/skeletor.png |
+|--------------------------------------------|
+|    4 | Figura de "Chichi"         |   25 € |
+| Figura anime esposa de Goku. Caja de 15 cm |
+|  x 10 cm x 20 cm. Peso 0.3 kg. Plástico PV |
+| C.                                         |
+| https://i.postimg.cc/qvZVy0BP/chichi.png   |
+|--------------------------------------------|
+|    5 | Figura de "La Cosa"        |   20 € |
+| Tamaño aprox: 18 cm altura x 16 cm anchura |
+|  x 4 cm profundidad. Buen estado. Sin caja |
+| . Año 1994.                                |
+| https://i.postimg.cc/ZK7DDHk3/cosa.png     |
+|--------------------------------------------|
+|    6 | Muñeco de Duke             |   20 € |
+| Mascota de Java de 15 cm de alto hecha a p |
+| unto rellena de algodón.                   |
+| https://i.postimg.cc/3RcGmk4s/duke.png     |
+|--------------------------------------------|
+
+1. Mostrar artículos
+2. Pujar por un artículo
+0. Exit
+Opción [0,2]: 

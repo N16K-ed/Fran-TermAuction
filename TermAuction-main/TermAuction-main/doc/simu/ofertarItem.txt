@@ -1,0 +1,90 @@
+*************************************************************************************
+*                             A U T E N T I C A C I Ó N                             *
+*************************************************************************************
+Para salir deje algún campo vacío
+
+Usuario   : Aitor
+Contraseña: 7654
+Autenticación correcta
+
+*************************************************************************************
+*                                  SUBASTA A CIEGAS                                 *
+*************************************************************************************
+
+1. Ver artículos y pujar
+2. Listar pujas realizadas
+3. Ofertar un artículo
+0. Exit
+Opción [0,3]: 3
+
+       Nombre artículo: Muñeco de Duke
+           Descripcion: Mascota de Java de 15 cm de alto hecha a punto rellena de algodón.
+      Precio de salida: 20
+            Url imagen: https://i.postimg.cc/3RcGmk4s/duke.png
+        Nombre usuario: Aitor
+            Contraseña: 7654
+|--------------------------------------------|
+| N.A. | Nombre del artículo        | P.ini. |
+| Descripción artículo & Enlace a la imagen. |
+|--------------------------------------------|
+|    0 | Muñeco de Duke             |   20 € |
+| Mascota de Java de 15 cm de alto hecha a p |
+| unto rellena de algodón.                   |
+| https://i.postimg.cc/3RcGmk4s/duke.png     |
+|--------------------------------------------|
+       Confirmar [s/N]: s
+Artículo ofertado pendiente de validar.
+
+1. Ver artículos y pujar
+2. Listar pujas realizadas
+3. Ofertar un artículo
+0. Exit
+Opción [0,3]: 1
+
+*************************************************************************************
+*                               Ver y pujar artículos                               *
+*************************************************************************************
+
+1. Mostrar artículos
+2. Pujar por un artículo
+0. Exit
+Opción [0,2]: 1
+
+|--------------------------------------------|
+| N.id | Nombre del artículo        | P.ini. |
+| Descripción artículo.  Enlace a la imagen. |
+|--------------------------------------------|
+|    3 | Figura de "Skeletor"       |   35 € |
+| Incluye accesorios dentro del envoltorio o |
+| riginal. 14 cm altura. Mattel. Hecho en Ch |
+| ina 2021.                                  |
+| https://i.postimg.cc/YCQYm2x9/skeletor.png |
+|--------------------------------------------|
+|    4 | Figura de "Chichi"         |   25 € |
+| Figura anime esposa de Goku. Caja de 15 cm |
+|  x 10 cm x 20 cm. Peso 0.3 kg. Plástico PV |
+| C.                                         |
+| https://i.postimg.cc/qvZVy0BP/chichi.png   |
+|--------------------------------------------|
+|    5 | Figura de "La Cosa"        |   20 € |
+| Tamaño aprox: 18 cm altura x 16 cm anchura |
+|  x 4 cm profundidad. Buen estado. Sin caja |
+| . Año 1994.                                |
+| https://i.postimg.cc/ZK7DDHk3/cosa.png     |
+|--------------------------------------------|
+
+1. Mostrar artículos
+2. Pujar por un artículo
+0. Exit
+Opción [0,2]: 0
+
+*************************************************************************************
+*                                  SUBASTA A CIEGAS                                 *
+*************************************************************************************
+
+1. Ver artículos y pujar
+2. Listar pujas realizadas
+3. Ofertar un artículo
+0. Exit
+Opción [0,3]: 0
+
