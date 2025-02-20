@@ -4,6 +4,7 @@ import edu.masanz.da.ta.conf.Ini;
 import edu.masanz.da.ta.dto.*;
 import edu.masanz.da.ta.utils.Security;
 
+import java.security.interfaces.RSAMultiPrimePrivateCrtKey;
 import java.util.*;
 
 import static edu.masanz.da.ta.conf.Ctes.*;
@@ -60,18 +61,21 @@ public class Dao {
         String[] splitted;
         int contador = 1;
         for (String item : ITEMS){
-
+            String nombre = "Item" + contador;
             splitted = item.split(SPLITTER);
             long id = Long.parseLong(splitted[0]);
-            Item item1 = new Item(id,splitted[1],splitted[2],splitted[3],splitted[4],splitted[5],splitted[6],splitted[7]);
-
+            int precio = Integer.parseInt(splitted[3]);
+            int estado = Integer.parseInt(splitted[6]);
+            boolean historico = Boolean.parseBoolean(splitted[7]);
+            Item item1 = new Item(id,splitted[1],splitted[2],precio,splitted[4],splitted[5],estado,historico);
 
             items.put(Integer.toString(contador), item1);
+            contador++;
         }
-        /* Recorrer el hashMap para comprobar:
+         /*Recorrer el hashMap para comprobar:
 
-        for (Map.Entry<String, ArrayList<String>> entrada : items.entrySet()) {
-            System.out.println(entrada.getKey() + entrada.getValue());
+        for (Map.Entry<String, Item> entrada : items.entrySet()) {
+            System.out.println(entrada.getKey() + entrada.getValue() + entrada.getValue().getUrlImagen() + entrada.getValue().getNombreUsuario() + entrada.getValue().getEstado() + entrada.getValue().isHistorico());
         }*/
     }
 
