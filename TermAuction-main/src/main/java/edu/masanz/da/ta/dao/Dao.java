@@ -4,6 +4,7 @@ import edu.masanz.da.ta.conf.Ini;
 import edu.masanz.da.ta.dto.*;
 import edu.masanz.da.ta.utils.Security;
 
+import javax.swing.*;
 import java.security.interfaces.RSAMultiPrimePrivateCrtKey;
 import java.util.*;
 
@@ -82,39 +83,40 @@ public class Dao {
         // TODO 03 iniMapaPujas
         HashMap<Long, List<Puja>> pujas = new HashMap<>();
         String[] splitted;
-        Long contador = (long) 1;
+
 
         //crear el mapa con claves = IDItem --> obtienes un mapa con listas de pujas para cada objeto;
         Set<Long> claves = mapaItems.keySet();
 
         for (Long id : claves){ // crea mapa con las claves de los  items y listas de pujas con valores nulos
-            pujas.put(id, new ArrayList<Puja>());
+            pujas.put(id, new ArrayList<>());
         }
-
+        //Crea lista de pujas sin ordenar
+        List<Puja> pujasSinOrdenar= new ArrayList<>();
+        for (String pujasINI : PUJAS){
+            splitted = pujasINI.split(SPLITTER);
+            long idITEM = Long.parseLong(splitted[0]);
+            int precio = Integer.parseInt(splitted[2]);
+            Puja puja1 = new Puja(idITEM,splitted[1],precio, splitted[3]);
+            pujasSinOrdenar.add(puja1);
+        }
 
         // bucle recorriendo claves añadiendo listas de pujas --> anidado otro bucle rellenando las listas
-        for (Long id : pujas.keySet()){ //recorre el array de strings de la clase ini
-           for (String datosPujas : PUJAS){
-
-
-
+        for (Long id : pujas.keySet()){ //recorre el mapa pujas
+            List<Puja> listadoPujasPorID = new ArrayList<>();
+           for (Puja puja : pujasSinOrdenar){//recorre el arraylist de pujas sin ordenar
+              if(puja.getIdItem() == id){
+                  listadoPujasPorID.add(puja);
+              }
            }
-            /*List<Puja> listado = new ArrayList<>();
-            splitted = puja.split(SPLITTER);
-
-            long id = Long.parseLong(splitted[0]);
-            int precio = Integer.parseInt(splitted[2]);
-
-            listado.add(new Puja(id,splitted[1],precio,splitted[3]));
-
-            pujas.put(contador, listado);
-            contador++;*/
-
+           pujas.put(id,listadoPujasPorID);
         }
         /* Recorrer el hashMap para comprobar:
-
-        for (Map.Entry<Integer, Puja> entrada : pujas.entrySet()) {
-            System.out.println(entrada.getKey().toString() + entrada.getValue() + ' ' + entrada.getValue().getIdItem());
+        for (Map.Entry<Long, List<Puja>> entrada : pujas.entrySet()) {
+            System.out.println("ID Item: " + entrada.getKey());
+            for (Puja puja : entrada.getValue()) {
+                System.out.println("  " + puja);
+            }
         }*/
     }
     //endregion
@@ -123,8 +125,8 @@ public class Dao {
     public static boolean autenticar(String nombreUsuario, String password) {
 //        return password.equals("1234");
         // TODO 04 autenticar
-        Usuario user = usuarios.;
-        Security.hash(password + );
+        //Usuario user = usuarios.;
+        //Security.hash(password + );
 
 
         return false;
