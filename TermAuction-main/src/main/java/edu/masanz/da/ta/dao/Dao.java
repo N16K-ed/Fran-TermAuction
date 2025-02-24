@@ -81,23 +81,22 @@ public class Dao {
 
     private static void iniMapaPujas() {
         // TODO 03 iniMapaPujas
-        HashMap<Integer, ArrayList<String>> pujas = new HashMap<>();
+        HashMap<Integer, Puja> pujas = new HashMap<>();
         String[] splitted;
         int contador = 1;
         for (String puja : PUJAS){
             ArrayList<String> datos = new ArrayList<>();
             splitted = puja.split(SPLITTER);
-            datos.add(splitted[0]);
-            datos.add(splitted[1]);
-            datos.add(splitted[2]);
-            datos.add(splitted[3]);
-            pujas.put(contador,datos);
+            long id = Long.parseLong(splitted[0]);
+            int precio = Integer.parseInt(splitted[2]) ;
+            Puja nuevaPuja = new Puja(id,splitted[1],precio,splitted[3]);
+            pujas.put(contador, nuevaPuja);
             contador++;
         }
         /* Recorrer el hashMap para comprobar:
 
-        for (Map.Entry<Integer, ArrayList<String>> entrada : pujas.entrySet()) {
-            System.out.println(entrada.getKey().toString() + entrada.getValue());
+        for (Map.Entry<Integer, Puja> entrada : pujas.entrySet()) {
+            System.out.println(entrada.getKey().toString() + entrada.getValue() + ' ' + entrada.getValue().getIdItem());
         }*/
     }
     //endregion
