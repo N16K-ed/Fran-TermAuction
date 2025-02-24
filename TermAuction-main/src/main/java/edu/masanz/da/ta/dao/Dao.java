@@ -57,11 +57,9 @@ public class Dao {
 
     private static void iniMapaItems() {
         // TODO 02 iniMapaItems
-        HashMap<String, Item> items = new HashMap<>();
+        HashMap<Long, Item> items = new HashMap<>();
         String[] splitted;
-        int contador = 1;
         for (String item : ITEMS){
-            String nombre = "Item" + contador;
             splitted = item.split(SPLITTER);
             long id = Long.parseLong(splitted[0]);
             int precio = Integer.parseInt(splitted[3]);
@@ -69,9 +67,10 @@ public class Dao {
             boolean historico = Boolean.parseBoolean(splitted[7]);
             Item item1 = new Item(id,splitted[1],splitted[2],precio,splitted[4],splitted[5],estado,historico);
 
-            items.put(Integer.toString(contador), item1);
-            contador++;
+            items.put(id, item1);
+
         }
+        mapaItems = items;
          /*Recorrer el hashMap para comprobar:
 
         for (Map.Entry<String, Item> entrada : items.entrySet()) {
@@ -81,17 +80,36 @@ public class Dao {
 
     private static void iniMapaPujas() {
         // TODO 03 iniMapaPujas
-        HashMap<Integer, Puja> pujas = new HashMap<>();
+        HashMap<Long, List<Puja>> pujas = new HashMap<>();
         String[] splitted;
-        int contador = 1;
-        for (String puja : PUJAS){
-            ArrayList<String> datos = new ArrayList<>();
+        Long contador = (long) 1;
+
+        //crear el mapa con claves = IDItem --> obtienes un mapa con listas de pujas para cada objeto;
+        Set<Long> claves = mapaItems.keySet();
+
+        for (Long id : claves){ // crea mapa con las claves de los  items y listas de pujas con valores nulos
+            pujas.put(id, new ArrayList<Puja>());
+        }
+
+
+        // bucle recorriendo claves añadiendo listas de pujas --> anidado otro bucle rellenando las listas
+        for (Long id : pujas.keySet()){ //recorre el array de strings de la clase ini
+           for (String datosPujas : PUJAS){
+
+
+
+           }
+            /*List<Puja> listado = new ArrayList<>();
             splitted = puja.split(SPLITTER);
+
             long id = Long.parseLong(splitted[0]);
-            int precio = Integer.parseInt(splitted[2]) ;
-            Puja nuevaPuja = new Puja(id,splitted[1],precio,splitted[3]);
-            pujas.put(contador, nuevaPuja);
-            contador++;
+            int precio = Integer.parseInt(splitted[2]);
+
+            listado.add(new Puja(id,splitted[1],precio,splitted[3]));
+
+            pujas.put(contador, listado);
+            contador++;*/
+
         }
         /* Recorrer el hashMap para comprobar:
 
@@ -105,6 +123,10 @@ public class Dao {
     public static boolean autenticar(String nombreUsuario, String password) {
 //        return password.equals("1234");
         // TODO 04 autenticar
+        Usuario user = usuarios.;
+        Security.hash(password + );
+
+
         return false;
     }
 
