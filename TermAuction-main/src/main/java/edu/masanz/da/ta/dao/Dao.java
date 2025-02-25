@@ -125,41 +125,102 @@ public class Dao {
     public static boolean autenticar(String nombreUsuario, String password) {
 //        return password.equals("1234");
         // TODO 04 autenticar
-        //Usuario user = usuarios.;
-        //Security.hash(password + );
+        Usuario aAutenticar= mapaUsuarios.get(nombreUsuario);
+        if (aAutenticar == null){
+            return false;
+        }
+        String sal = aAutenticar.getSal();
+        String hashEnBaseDeDatos = aAutenticar.getHashPwSal();
 
-
-        return false;
+        return Security.validateHashedPasswordSalt(password,sal,hashEnBaseDeDatos);
     }
 
     public static boolean esAdmin(String nombreUsuario) {
 //        return nombreUsuario.equalsIgnoreCase("Admin");
         // TODO 05 esAdmin
-        return false;
+        Usuario esAdminAComprobar = mapaUsuarios.get(nombreUsuario);
+        if (esAdminAComprobar == null){
+            return false;
+        }
+        return esAdminAComprobar.getRol().equals("ADMIN") ;
     }
 
     public static List<Usuario> obtenerUsuarios() {
         // TODO 06 obtenerUsuarios
-        return null;
+        return new ArrayList<>(mapaUsuarios.values()); // Logrado con Show context actions (herramienta del Intelli, la bombilla esa, porque me salia un warning de que se podía hacer mejor)
+        /*
+        Código original:
+
+        List<Usuario> listado = new ArrayList<>();
+        for (Usuario usuario : mapaUsuarios.values()) {
+            listado.add(usuario);
+        }
+        return listado;
+        */
+
     }
 
     public static boolean crearUsuario(String nombre, String password, boolean esAdmin) {
         // TODO 07 crearUsuario
+
+        if(mapaUsuarios.containsKey(nombre)){
+            System.out.println("El usuario " + nombre + " ya se encuientra registrado en la base de datos.");
+            return false;
+        }
+        String nuevoSal = Security.generateSalt();
+        String nuevoHashPwSal = Security.hash(password + nuevoSal);
+        String rol;
+        if (esAdmin){
+            rol = "ADMIN";
+        }else{
+            rol = "USER";
+        }
+        Usuario nuevoUser = new Usuario(nombre, nuevoSal, nuevoHashPwSal, rol);
+        mapaUsuarios.put(nombre, nuevoUser);
+        System.out.println("Usuario " + nombre + " añadido.");
         return true;
     }
 
     public static boolean modificarPasswordUsuario(String nombre, String password) {
         // TODO 08 modificarPasswordUsuario
-        return false;
+        if(!mapaUsuarios.containsKey(nombre)){
+            System.out.println("Usuario no encontrado");
+            return false;
+        }
+        Usuario userACambiar = mapaUsuarios.get(nombre);
+        String nuevoSal = Security.generateSalt();
+        String nuevoHash = Security.hash(password + nuevoSal);
+
+        userACambiar.setSal(nuevoSal);
+        userACambiar.setHashPwSal(nuevoHash);
+        System.out.println("La nueva contraseña es " + password);
+        return true;
     }
 
     public static boolean modificarRolUsuario(String nombre, String rol) {
         // TODO 09 modificarRolUsuario
+        if(!mapaUsuarios.containsKey(nombre)){
+            System.out.println("Usuario no encontrado");
+            return false;
+        }
+        if(!rol.equalsIgnoreCase("ADMIN") && !rol.equalsIgnoreCase("USER")){
+            System.out.println("El rol introducido no es válido.\nFormatos válidos:\n\t- USER\n\t- ADMIN");
+            return false;
+        }
+        Usuario userAModificarRol = mapaUsuarios.get(nombre);
+        userAModificarRol.setRol(rol.toUpperCase());//Asegura que el rol sea mayusculas si se introduce en minúsculas
         return false;
     }
 
     public static boolean eliminarUsuario(String nombre) {
         // TODO 10 eliminarUsuario
+
+        if(!mapaUsuarios.containsKey(nombre)){
+            System.out.println("Usuario no encontrado");
+            return false;
+        }
+        mapaUsuarios.remove(nombre);
+
         return true;
     }
 
