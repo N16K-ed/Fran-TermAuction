@@ -229,34 +229,122 @@ public class Dao {
     //region Validación de artículos
     public static List<Item> obtenerArticulosPendientes() {
         // TODO 11 obtenerArticulosPendientes
-        return null;
+        List<Item> pendientes = new ArrayList<>();
+        for (Item item : mapaItems.values()) {
+            if (item.getEstado() == EST_PENDIENTE) {
+                pendientes.add(item);
+            }
+        }
+        return pendientes;
     }
 
     public static boolean validarArticulo(long id, boolean valido) {
         // TODO 12 validarArticulo
-        return false;
+
+        if (!mapaItems.containsKey(id)) {
+            System.out.println("El artículo con ID " + id + "no está registrado en nuestra base de datos.");
+            return false;
+        }
+
+        Item itemAValidar = mapaItems.get(id);
+        String estadoActual = "";
+        switch (itemAValidar.getEstado()){
+            case EST_ACEPTADO:
+                estadoActual = "Aceptado";
+                break;
+            case EST_PENDIENTE:
+                estadoActual = "Pendiente";
+                break;
+            case EST_RECHAZADO:
+                estadoActual = "Actual";
+                break;
+            case EST_CANCELADO:
+                estadoActual = "Cancelado";
+                break;
+        }
+
+        if (itemAValidar.getEstado() != EST_PENDIENTE){
+            System.out.println("El artículo con ID " + id + " ya ha sido validado.\nEstado: " + estadoActual);
+            return false;
+        }
+
+        if (valido){
+            itemAValidar.setEstado(EST_ACEPTADO);
+            System.out.println("El Item " + itemAValidar.getNombre() + " ha sido validado.");
+        }else{
+            itemAValidar.setEstado(EST_RECHAZADO);
+            System.out.println("El Item " + itemAValidar.getNombre() + " ha sido rechazado.");        }
+
+        return true;
     }
 
     public static boolean validarTodos() {
         // TODO 13 validarTodos
-        return true;
+        boolean hayPendientes = false;
+
+        for (Item item : mapaItems.values()) {
+            if (item.getEstado() == EST_PENDIENTE) {
+                item.setEstado(EST_ACEPTADO);
+                System.out.println("El Item " + item.getNombre() + " ha sido validado.");
+                hayPendientes = true;
+            }
+        }
+
+        return hayPendientes;
     }
     //endregion
 
     //region Gestión de artículos y pujas de administrador
     public static List<ItemPujas> obtenerArticulosConPujas() {
         // TODO 14 obtenerArticulosConPujas
-        return null;
+
+        List<ItemPujas> lista = new ArrayList<>();
+
+        for (Map.Entry<Long, List<Puja>> entry : mapaPujas.entrySet()) {
+            long idItem = entry.getKey();
+            List<Puja> pujas = entry.getValue();
+
+            if (!pujas.isEmpty()) { // si hay al menos 1 puja asignada al item (con el id)
+                Item item = mapaItems.get(idItem);
+                lista.add(new ItemPujas(item, pujas));
+            }
+        }
+        return lista;
     }
 
     public static boolean resetearSubasta() {
         // TODO 15 resetearSubasta
+        for (Item item : mapaItems.values()) {
+            item.setEstado(EST_PENDIENTE);
+            item.setHistorico(false);
+        }
+        mapaPujas.clear();
+        System.out.println("Todos los artículos están pendientes y las pujas se han eliminado.");
         return true;
     }
 
     public static List<PujaItem> obtenerHistoricoGanadores() {
         // TODO 16 obtenerHistoricoGanadores
-        return null;
+        List<PujaItem> historicoGanadores = new ArrayList<>();
+
+        for (Item item : mapaItems.values()) {
+            if (item.isHistorico()) {
+                List<Puja> pujas = mapaPujas.get(item.getId());// lista de todas las pujas (historicos)
+
+                if (pujas != null && !pujas.isEmpty()) {
+                    Puja pujaGanadora = pujas.get(0); //la puja ganadora por defecto es la primera
+                    for (Puja puja : pujas) {
+                        if (puja.getPrecioPujado() > pujaGanadora.getPrecioPujado()){ //si alguna gana a la ganadora actual actualiza la puja ganadora
+                            pujaGanadora = puja;
+                        }
+                    }
+                    historicoGanadores.add(new PujaItem(item.getId(), item.getNombre(), item.getPrecioInicio(),
+                            item.getUrlImagen(), item.getNombreUsuario(), pujaGanadora.getNombreUsuario(),
+                            pujaGanadora.getPrecioPujado(), pujaGanadora.getInstanteTiempo())); //añade el item con su puja en la lista a devolver
+                }
+            }
+        }
+        return historicoGanadores;
     }
     //endregion
 
@@ -264,17 +352,53 @@ public class Dao {
 
     public static Item obtenerArticuloPujable(long idArt) {
         // TODO 17 obtenerArticuloPujable
-        return null;
+
+        Item itemParaPujar = mapaItems.get(idArt);
+
+        if (itemParaPujar == null || itemParaPujar.getEstado() != EST_ACEPTADO) { //el articulo o no existe o no se puede pujar
+            return null;
+        }
+
+        return itemParaPujar;
     }
 
     public static List<Item> obtenerArticulosPujables() {
         // TODO 18 obtenerArticulosPujables
-        return null;
+
+        List<Item> pujables = new ArrayList<>();
+
+        for (Item item : mapaItems.values()) {
+            if (obtenerArticuloPujable(item.getId()) != null) {
+                pujables.add(item);
+            }
+        }
+
+        return pujables;
+
     }
 
     public static boolean pujarArticulo(long idArt, String nombre, int precio) {
         // TODO 19 pujarArticulo
-        return false;
+        Item item = obtenerArticuloPujable(idArt);
+        if (item == null) {
+            System.out.println("El artículo no está disponible para pujar.");
+            return false;
+        }
+
+        List<Puja> pujas = mapaPujas.get(idArt);
+
+        for (Puja puja : pujas) {
+            if (precio <= puja.getPrecioPujado()) {
+                System.out.println("La puja debe ser mayor a la actual.");
+                return false;
+            }
+        }
+
+        Puja nuevaPuja = new Puja(idArt, nombre, precio);
+        pujas.add(nuevaPuja);
+
+        System.out.println("Puja realizada por " + nombre + " al artículo " + item.getNombre());
+        return true;
     }
 
     public static List<PujaItem> obtenerPujasVigentesUsuario(String nombreUsuario) {
