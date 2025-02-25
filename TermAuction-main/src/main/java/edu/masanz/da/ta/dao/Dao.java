@@ -129,6 +129,7 @@ public class Dao {
         if (aAutenticar == null){
             return false;
         }
+
         String sal = aAutenticar.getSal();
         String hashEnBaseDeDatos = aAutenticar.getHashPwSal();
 
@@ -209,7 +210,7 @@ public class Dao {
         }
         Usuario userAModificarRol = mapaUsuarios.get(nombre);
         userAModificarRol.setRol(rol.toUpperCase());//Asegura que el rol sea mayusculas si se introduce en minúsculas
-        return false;
+        return true;
     }
 
     public static boolean eliminarUsuario(String nombre) {
@@ -338,9 +339,8 @@ public class Dao {
                             pujaGanadora = puja;
                         }
                     }
-                    historicoGanadores.add(new PujaItem(item.getId(), item.getNombre(), item.getPrecioInicio(),
-                            item.getUrlImagen(), item.getNombreUsuario(), pujaGanadora.getNombreUsuario(),
-                            pujaGanadora.getPrecioPujado(), pujaGanadora.getInstanteTiempo())); //añade el item con su puja en la lista a devolver
+                    historicoGanadores.add(new PujaItem(item.getId(), item.getNombre(), item.getPrecioInicio(), item.getUrlImagen(), item.getNombreUsuario(), pujaGanadora.getNombreUsuario(), pujaGanadora.getPrecioPujado(), pujaGanadora.getInstanteTiempo()));
+                    //añade el item con su puja en la lista a devolver
                 }
             }
         }
@@ -403,11 +403,38 @@ public class Dao {
 
     public static List<PujaItem> obtenerPujasVigentesUsuario(String nombreUsuario) {
         // TODO 20 obtenerPujasVigentesUsuario
-        return null;
+        List<PujaItem> pujasVigentes = new ArrayList<>();
+
+        for (Map.Entry<Long, List<Puja>> entry : mapaPujas.entrySet()) {
+            long idItem = entry.getKey();
+            List<Puja> pujas = entry.getValue();
+
+            for (Puja puja : pujas) { //recorres las pujas (TODAS)
+                if (puja.getNombreUsuario().equals(nombreUsuario)) { //compreubas si pertenecen al usuario mirado
+                    Item item = mapaItems.get(idItem);
+                    if (item != null && item.getEstado() == EST_ACEPTADO) { // Comprueba si la puja del item es vigente
+                        pujasVigentes.add(new PujaItem(idItem, item.getNombre(), item.getPrecioInicio(), item.getUrlImagen(), item.getNombreUsuario(), puja.getNombreUsuario(), puja.getPrecioPujado(), puja.getInstanteTiempo()));
+                    }
+                }
+            }
+        }
+        return pujasVigentes;
     }
 
     public static boolean ofrecerArticulo(Item item) {
         // TODO 21 ofrecerArticulo
+        if (mapaItems.containsKey(item.getId())) {
+            System.out.println("El artículo con ID " + item.getId() + " ya existe.");
+            return false;
+        }
+
+        item.setEstado(EST_PENDIENTE);
+        item.setHistorico(false);
+
+        mapaItems.put(item.getId(), item);
+
+        System.out.println("El Artículo '" + item.getNombre() + "' ha sido añadido con éxito a la base de datos y está en espera de ser validado.");
+
         return true;
     }
 
